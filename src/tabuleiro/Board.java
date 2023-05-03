@@ -1,15 +1,15 @@
 package tabuleiro;
 
-public class tab {
+public class Board {
 	
 	private int linha;
 	private int coluna;
-	private peça[][] peças;
+	private Piece[][] pieces;
 	
-	public tab(int linha, int coluna) {
+	public Board(int linha, int coluna) {
 		this.linha = linha;
 		this.coluna = coluna;
-		peças = new peça[linha][coluna];
+		pieces = new Piece[linha][coluna];
 	}
 
 	public int getLinha() {
@@ -28,5 +28,11 @@ public class tab {
 		this.coluna = coluna;
 	}
 	
+	public Piece piece(int linha, int coluna) {
+		return pieces[linha][coluna];
+	}
+	public Piece piece(posição lugar) {
+		return pieces[lugar.getLinha()][lugar.getColuna()];
+	}
 	
 }
